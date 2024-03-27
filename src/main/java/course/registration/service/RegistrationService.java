@@ -24,6 +24,7 @@ public class RegistrationService {
         return (List<CourseInfo>) courseInfoRepository.findByCourseDate(courseDate);
     }
 
+    @Transactional
     public String reserveCourse(String courseDate, Long userId) {
         CourseInfo courseInfo = courseInfoRepository.findByCourseDate(courseDate);
         if (courseInfo == null) {
