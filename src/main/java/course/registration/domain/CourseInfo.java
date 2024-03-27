@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.cglib.core.Local;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -18,6 +19,10 @@ public class CourseInfo {
     private Long courseId;
 
     private String courseDate;
+
+    private LocalDate createdAt;
+
+    private LocalDate updatedAt;
 
     @OneToMany(mappedBy = "courseInfo", cascade = CascadeType.ALL)
     private List<ReserveInfo> reserveInfos = new ArrayList<>();
